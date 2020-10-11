@@ -16,7 +16,7 @@
    $newtotal=$s1+$s2+$s3+$s4+$s5;
    $newpercent=($newtotal/500)*100;
    
-   mysqli_query($connect, "UPDATE class1 SET sub5='$s5', totalobtained= '$newtotal',percent='$newpercent' WHERE name='$newname'");
+   mysqli_query($connect, "UPDATE class1 SET sub5='$s5', total_obtained= '$newtotal',percent='$newpercent' WHERE name='$newname'");
   }
   echo "New changes are done";
 }

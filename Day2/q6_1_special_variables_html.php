@@ -1,30 +1,32 @@
 <html>
-	<form action="Triangle.php" method="GET">
-		SIDE1: <input type="text" name="side1"><br/>
-		SIDE2: <input type="text" name="side2"><br/>
-		SIDE3: <input type="text" name="side3"><br/>
-		<input type="submit">
-	</form>
+ <form action="q6_1_special_variables_html.php" method="GET">
+   Side a: <input type="number" min="1" name="s1"><br>
+   Side b: <input type="number" min="1" name="s2"><br>
+   Side c: <input type="number" min="1" name="s3"><br>
+   <input type="submit" name="xyz"/>
+ </form>
 </html>
-
 <?php
-if (isset($_GET['side1'], $_GET['side2'], $_GET['side3'])){
-	$a = $_GET['side1'];
-	$b = $_GET['side2'];
-	$c = $_GET['side3'];
-
-	if ($a && $b && $c){
-		if ($a == $b && $a == $c && $b == $c){
-			echo "Equilateral Triangle";
-		}
-
-		elseif ($a == $b || $a == $c || $b == $c){
-			echo "Isoceles Triangle";
-		}
-
-		else{
-			echo "Scalene Triangle";
-		}
-	}
+if(isset($_GET['xyz']))
+{
+$a=$_GET['s1'];
+$b=$_GET['s2'];
+$c=$_GET['s3'];
+$i=0;
+if($a==$b & $b==$c){
+    echo "Triangle is an equilateral triangle.";
 }
-?>
+
+elseif($a==$b | $a==$c | $b==$c){
+    echo "Triangle is an isosceles triangle.";
+}
+else{
+    if($a*$a==$b*$b+$c*$c | $b*$b==$a*$a+$c*$c | $c*$c==$b*$b+$a*$a){
+        echo "Triangle is a right angled triangle.";
+    }
+    else{
+        echo "Triangle is a scalene triangle.";
+    }
+       
+    }
+}?>
